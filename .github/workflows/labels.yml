@@ -1,6 +1,7 @@
 name: Labels
 
-# Creates or updates the issue labels from .github/labels.json (the issue forms need them to exist).
+# Makes the issue labels match .github/labels.json: creates or updates them (the issue forms need them to exist)
+# and deletes any other label, such as GitHub's defaults.
 # Free on a public repository.
 on:
   push:
@@ -29,4 +30,10 @@ jobs:
                 await github.rest.issues.createLabel({ owner, repo, ...label });
               }
               core.info(`label ${label.name}`);
+            }
+            for (const label of existing) {
+              if (!labels.some(l => l.name === label.name)) {
+                await github.rest.issues.deleteLabel({ owner, repo, name: label.name });
+                core.info(`deleted ${label.name}`);
+              }
             }
