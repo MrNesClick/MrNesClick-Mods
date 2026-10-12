@@ -1,0 +1,20 @@
+name: Suggestion
+description: An idea or an improvement for one of the mods
+labels: ["suggestion"]
+body:
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Mod
+      options:
+        - Flux Networks Extended
+        - MCNesClick
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What you would like, and why it would help you.
+    validations:
+      required: true

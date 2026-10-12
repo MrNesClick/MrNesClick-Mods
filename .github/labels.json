@@ -1,0 +1,9 @@
+[
+  {"name": "Flux Networks Extended", "color": "7a3fd0", "description": "Flux Networks Extended mod"},
+  {"name": "MCNesClick", "color": "2e8b57", "description": "MCNesClick mod"},
+  {"name": "bug", "color": "d73a4a", "description": "Something does not work"},
+  {"name": "suggestion", "color": "0e8a16", "description": "Idea or improvement"},
+  {"name": "duplicate", "color": "cfd3d7", "description": "Already reported"},
+  {"name": "needs info", "color": "fbca04", "description": "Waiting for more details from the reporter"},
+  {"name": "upstream", "color": "bfdadc", "description": "Caused by another mod (Flux Networks, Mekanism...)"}
+]

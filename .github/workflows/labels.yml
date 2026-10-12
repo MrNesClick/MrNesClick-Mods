@@ -1,0 +1,32 @@
+name: Labels
+
+# Creates or updates the issue labels from .github/labels.json (the issue forms need them to exist).
+# Free on a public repository.
+on:
+  push:
+    branches: [main]
+    paths: [.github/labels.json, .github/workflows/labels.yml]
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const labels = JSON.parse(require('fs').readFileSync('.github/labels.json', 'utf8'));
+            const { owner, repo } = context.repo;
+            const existing = await github.paginate(github.rest.issues.listLabelsForRepo, { owner, repo });
+            for (const label of labels) {
+              if (existing.some(l => l.name === label.name)) {
+                await github.rest.issues.updateLabel({ owner, repo, ...label });
+              } else {
+                await github.rest.issues.createLabel({ owner, repo, ...label });
+              }
+              core.info(`label ${label.name}`);
+            }

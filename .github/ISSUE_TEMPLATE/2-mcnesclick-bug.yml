@@ -1,0 +1,66 @@
+name: "Bug: MCNesClick"
+description: Something does not work in MCNesClick
+title: "[MCNesClick] "
+labels: ["MCNesClick", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the report! English or French, both are fine.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Light a campfire ...
+        2. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Loader
+      options:
+        - Fabric
+        - NeoForge
+        - Forge
+    validations:
+      required: true
+  - type: input
+    id: minecraft
+    attributes:
+      label: Minecraft version
+      placeholder: "1.21.1"
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: MCNesClick version
+      placeholder: "1.2.0"
+    validations:
+      required: true
+  - type: input
+    id: other-mods
+    attributes:
+      label: Other mods or modpack
+      description: Fabric API version on Fabric, and any mod that could be involved, or the modpack name and version.
+  - type: input
+    id: log
+    attributes:
+      label: Log or crash report
+      description: Upload `logs/latest.log` or the file in `crash-reports/` to https://mclo.gs and paste the link.
+      placeholder: "https://mclo.gs/..."
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and this one is new.
+          required: true

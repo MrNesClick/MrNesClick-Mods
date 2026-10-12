@@ -1,0 +1,69 @@
+name: "Bug: Flux Networks Extended"
+description: Something does not work in Flux Networks Extended
+title: "[FNE] "
+labels: ["Flux Networks Extended", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! English or French, both are fine.
+        Please check first that the bug does not happen with Flux Networks alone (without Flux Networks Extended):
+        if it does, report it to [Flux Networks](https://github.com/SonarSonic/Flux-Networks/issues) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Place an Ultimate Flux Plug next to ...
+        2. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: minecraft
+    attributes:
+      label: Minecraft and loader
+      options:
+        - NeoForge 1.21.1
+        - Forge 1.20.1
+    validations:
+      required: true
+  - type: input
+    id: fne-version
+    attributes:
+      label: Flux Networks Extended version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: fn-version
+    attributes:
+      label: Flux Networks version
+      placeholder: "8.0.0"
+    validations:
+      required: true
+  - type: input
+    id: other-mods
+    attributes:
+      label: Mekanism, The One Probe, Jade or modpack
+      description: Their versions if installed, or the modpack name and version.
+      placeholder: "Mekanism 10.7.19, Jade 15.10.6 / or: All the Mods 10, 2.5"
+  - type: input
+    id: log
+    attributes:
+      label: Log or crash report
+      description: Upload `logs/latest.log` or the file in `crash-reports/` to https://mclo.gs and paste the link.
+      placeholder: "https://mclo.gs/..."
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and this one is new.
+          required: true
