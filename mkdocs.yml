@@ -1,0 +1,57 @@
+site_name: MrNesClick's Minecraft mods
+site_description: Documentation of the Minecraft mods by MrNesClick
+site_url: https://mrnesclick.github.io/MrNesClick-Mods/
+repo_url: https://github.com/MrNesClick/MrNesClick-Mods
+repo_name: Issues and suggestions
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/minecraft
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Mekanistic Geothermal:
+      - mekanistic-geothermal/index.md
+  - Flux Networks Extended:
+      - flux-networks-extended/index.md
+  - MCNesClick:
+      - mcnesclick/index.md

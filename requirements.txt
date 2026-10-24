@@ -1,0 +1,4 @@
+# Pinned: MkDocs 2.0 drops the plugin and theme systems Material for MkDocs relies on (see its 2026-02-18 blog post).
+# The pages are plain Markdown, so a later move to Zensical (Material's successor) keeps them as they are.
+mkdocs==1.6.1
+mkdocs-material==9.7.6

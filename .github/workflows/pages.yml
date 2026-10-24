@@ -1,0 +1,45 @@
+name: Pages
+
+# Builds the documentation site (MkDocs Material, docs/ and mkdocs.yml) and publishes it on GitHub Pages:
+# https://mrnesclick.github.io/MrNesClick-Mods/
+# Free on a public repository.
+on:
+  push:
+    branches: [main]
+    paths: [docs/**, mkdocs.yml, requirements.txt, .github/workflows/pages.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      # --strict: a broken link or a missing page fails the build instead of publishing it
+      - run: mkdocs build --strict
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
