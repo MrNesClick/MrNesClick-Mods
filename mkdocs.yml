@@ -46,11 +46,17 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  # Generated pages (tools/config_reference.py) are included from tools/generated, outside docs/.
+  - pymdownx.snippets:
+      base_path: [tools/generated]
+      check_paths: true
 
 nav:
   - Home: index.md
   - Mekanistic Geothermal:
       - mekanistic-geothermal/index.md
+      - Getting started: mekanistic-geothermal/getting-started.md
+      - Configuration: mekanistic-geothermal/config.md
   - Flux Networks Extended:
       - flux-networks-extended/index.md
   - MCNesClick:

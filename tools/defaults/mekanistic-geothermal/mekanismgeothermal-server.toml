@@ -1,0 +1,360 @@
+#Per-tier wellhead settings. Tiers improve capacities, steam rate and drilling speed, never temperature.
+[tiers]
+
+	[tiers.basic]
+		#Energy buffer (FE).
+		# Default: 400000
+		# Range: > 1
+		energyCapacity = 400000
+		#Maximum energy accepted per tick (FE/t).
+		# Default: 4000
+		# Range: > 1
+		maxEnergyInput = 4000
+		#Energy consumed per drilled block (FE).
+		# Default: 4000
+		# Range: > 0
+		drillEnergyPerBlock = 4000
+		#Ticks needed to drill one block.
+		# Default: 40
+		# Range: 1 ~ 72000
+		drillTicksPerBlock = 40
+		#Casing slots of the interface (64 casings each).
+		# Default: 4
+		# Range: 1 ~ 4
+		casingSlots = 4
+		#Slots of the debris inventory.
+		# Default: 18
+		# Range: 1 ~ 54
+		debrisSlots = 18
+		#Water tank capacity (mB).
+		# Default: 32000
+		# Range: > 1
+		waterCapacity = 32000
+		#Steam tank capacity (mB). Its fill ratio is the pressure.
+		# Default: 64000
+		# Range: > 1
+		steamCapacity = 64000
+		#Maximum steam output (mB/t) at temperature factor 1, without interference or exhaustion.
+		# Default: 400
+		# Range: 0 ~ 1000000
+		maxSteamRate = 400
+		#Energy consumed per tick by the control system once the column exists (FE/t).
+		# Default: 20
+		# Range: > 0
+		controlEnergyPerTick = 20
+
+#Interface
+[interface]
+	#Hides the guide tab of the wellhead for every player, for modpacks that have their own manual.
+	guideForceHidden = false
+
+#Drilling
+[drilling]
+	#Steel well casings consumed per drilled block.
+	# Default: 1
+	# Range: 1 ~ 64
+	casingsPerBlock = 1
+	#Drilling starts by itself when the wellhead is placed and whenever the target is deeper, instead of waiting
+	#for the "Start drilling" button. Repairs of the column never wait for the button.
+	autoStart = false
+	#Changing the target depth stops the drilling until the "Start drilling" button is pressed again.
+	targetChangeStopsDrilling = true
+	#The drilling fake player uses the wellhead owner's profile, so claim mods apply the owner's permissions.
+	fakePlayerUsesOwnerProfile = true
+	#Ticks between two integrity checks of the casing column.
+	# Default: 100
+	# Range: 20 ~ 12000
+	columnCheckInterval = 100
+
+#Heat. Temperature depends on the absolute Y of the well bottom and on the dimension profile.
+[heat]
+	#Temperature (°C) under which no steam is produced. The temperature factor is 0 here.
+	# Default: 100.0
+	# Range: 0.0 ~ 10000.0
+	boilingTemperature = 100.0
+	#Temperature (°C) at which the temperature factor reaches 1.
+	# Default: 250.0
+	# Range: 1.0 ~ 10000.0
+	maxTemperature = 250.0
+	#Cap of the temperature factor. Above 1, lava around the bottom can push production past the tier max rate.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	maxTemperatureFactor = 1.0
+	#Heat profile of each dimension, as "namespace:path=profile".
+	#Profiles: overworld, nether, end, other. Unlisted dimensions use the "other" profile.
+	dimensionProfiles = ["minecraft:overworld=overworld", "minecraft:the_nether=nether", "minecraft:the_end=end"]
+
+	#Heat profiles. Temperature is linear between topY and bottomY and clamped outside.
+	[heat.profiles]
+
+		[heat.profiles.overworld]
+			#Whether wells produce steam in dimensions using this profile.
+			enabled = true
+			#Y of the shallow reference point.
+			# Default: 0
+			# Range: -2048 ~ 2048
+			topY = 0
+			#Temperature (°C) at topY and above.
+			# Default: 100.0
+			# Range: -273.0 ~ 10000.0
+			topTemperature = 100.0
+			#Y of the deep reference point.
+			# Default: -60
+			# Range: -2048 ~ 2048
+			bottomY = -60
+			#Temperature (°C) at bottomY and below.
+			# Default: 250.0
+			# Range: -273.0 ~ 10000.0
+			bottomTemperature = 250.0
+			#Multiplier applied to the steam output.
+			# Default: 1.0
+			# Range: 0.0 ~ 100.0
+			productionMultiplier = 1.0
+
+		[heat.profiles.nether]
+			#Whether wells produce steam in dimensions using this profile.
+			enabled = true
+			#Y of the shallow reference point.
+			# Default: 128
+			# Range: -2048 ~ 2048
+			topY = 128
+			#Temperature (°C) at topY and above.
+			# Default: 180.0
+			# Range: -273.0 ~ 10000.0
+			topTemperature = 180.0
+			#Y of the deep reference point.
+			# Default: 0
+			# Range: -2048 ~ 2048
+			bottomY = 0
+			#Temperature (°C) at bottomY and below.
+			# Default: 180.0
+			# Range: -273.0 ~ 10000.0
+			bottomTemperature = 180.0
+			#Multiplier applied to the steam output.
+			# Default: 0.6
+			# Range: 0.0 ~ 100.0
+			productionMultiplier = 0.6
+
+		[heat.profiles.end]
+			#Whether wells produce steam in dimensions using this profile.
+			enabled = false
+			#Y of the shallow reference point.
+			# Default: 0
+			# Range: -2048 ~ 2048
+			topY = 0
+			#Temperature (°C) at topY and above.
+			# Default: 20.0
+			# Range: -273.0 ~ 10000.0
+			topTemperature = 20.0
+			#Y of the deep reference point.
+			# Default: -64
+			# Range: -2048 ~ 2048
+			bottomY = -64
+			#Temperature (°C) at bottomY and below.
+			# Default: 20.0
+			# Range: -273.0 ~ 10000.0
+			bottomTemperature = 20.0
+			#Multiplier applied to the steam output.
+			# Default: 0.0
+			# Range: 0.0 ~ 100.0
+			productionMultiplier = 0.0
+
+		[heat.profiles.other]
+			#Whether wells produce steam in dimensions using this profile.
+			enabled = false
+			#Y of the shallow reference point.
+			# Default: 0
+			# Range: -2048 ~ 2048
+			topY = 0
+			#Temperature (°C) at topY and above.
+			# Default: 100.0
+			# Range: -273.0 ~ 10000.0
+			topTemperature = 100.0
+			#Y of the deep reference point.
+			# Default: -60
+			# Range: -2048 ~ 2048
+			bottomY = -60
+			#Temperature (°C) at bottomY and below.
+			# Default: 250.0
+			# Range: -273.0 ~ 10000.0
+			bottomTemperature = 250.0
+			#Multiplier applied to the steam output.
+			# Default: 1.0
+			# Range: 0.0 ~ 100.0
+			productionMultiplier = 1.0
+
+	#Bonus heat from lava around the well bottom (periodic scan, loaded chunks only).
+	[heat.lava]
+		#Radius (blocks) of the cube scanned around the well bottom.
+		# Default: 2
+		# Range: 0 ~ 8
+		scanRadius = 2
+		#Ticks between two lava scans.
+		# Default: 200
+		# Range: 20 ~ 12000
+		scanInterval = 200
+		#Temperature bonus (°C) per lava source block found.
+		# Default: 2.0
+		# Range: 0.0 ~ 1000.0
+		bonusPerBlock = 2.0
+		#Maximum total lava bonus (°C).
+		# Default: 50.0
+		# Range: 0.0 ~ 10000.0
+		bonusMax = 50.0
+
+#Water to steam conversion
+[production]
+	#Lose part of the water as blowdown.
+	purgeEnabled = true
+	#Fraction of the consumed water lost as blowdown: steam = water x (1 - purgeRatio).
+	# Default: 0.05
+	# Range: 0.0 ~ 1.0
+	purgeRatio = 0.05
+	#Stop producing steam when the wellhead has no energy. By default, boiling is passive and energy only
+	#powers the control system (automatic shutdown, low-water lock).
+	productionNeedsEnergy = false
+
+#Pressure is the fill ratio of the internal steam tank. The control system (automatic shutdown, low-water lock) runs
+#on the wellhead energy (tier controlEnergyPerTick); without energy it cannot act. The emergency stop always works.
+[safety]
+	#Enable the safety valve (needs air right above the wellhead).
+	valveEnabled = true
+	#Pressure at which the safety valve opens.
+	# Default: 0.8
+	# Range: 0.0 ~ 1.0
+	valveOpenThreshold = 0.8
+	#Steam the open valve can vent per tick, as a fraction of the max steam rate (upgrades included).
+	#It vents down to the opening threshold only. Under 1, the valve slows a pressure rise without stopping it,
+	#so the automatic shutdown stays reachable; at 1 or more, an unobstructed valve holds the pressure at its threshold.
+	# Default: 0.5
+	# Range: 0.0 ~ 10.0
+	valveVentRatio = 0.5
+	#The valve needs energy to open. By default it is mechanical and only needs air above the wellhead.
+	valveNeedsEnergy = false
+	#Enable the automatic shutdown on high pressure.
+	autoShutdownEnabled = true
+	#Pressure at which production stops automatically.
+	# Default: 0.9
+	# Range: 0.0 ~ 1.0
+	autoShutdownThreshold = 0.9
+	#Pressure under which production restarts after an automatic shutdown.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	autoRestartThreshold = 0.5
+	#Once the water tank runs dry, keep production stopped until the water is back over the restart threshold.
+	lowWaterShutdownEnabled = true
+	#Water fill ratio over which production restarts after a low-water shutdown.
+	# Default: 0.1
+	# Range: 0.0 ~ 1.0
+	lowWaterRestartThreshold = 0.1
+
+#Eruption: the well is at full pressure, still heated and fed, and nothing relieves it (valve obstructed, disabled
+#or unpowered, automatic shutdown disabled or unpowered). After the grace period, each second rolls the chance.
+[eruption]
+	#DISABLED, STEAM_JET (burn damage, no block damage) or EXPLOSION.
+	#Allowed Values: DISABLED, STEAM_JET, EXPLOSION
+	mode = "DISABLED"
+	#Ticks at full pressure before any eruption can happen.
+	# Default: 600
+	# Range: 0 ~ 72000
+	gracePeriod = 600
+	#Chance per second of an eruption once the grace period is over (0.02: about 50 s on average).
+	# Default: 0.02
+	# Range: 0.0 ~ 1.0
+	chancePerSecond = 0.02
+	#Radius (blocks) of the steam jet.
+	# Default: 5
+	# Range: 1 ~ 32
+	steamJetRadius = 5
+	#Burn damage dealt by the steam jet.
+	# Default: 8.0
+	# Range: 0.0 ~ 1000.0
+	steamJetDamage = 8.0
+	#Fraction of the steam tank released by a steam jet.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	steamJetReleasedSteam = 0.5
+	#Explosion power (TNT = 4).
+	# Default: 4.0
+	# Range: 0.0 ~ 20.0
+	explosionPower = 4.0
+	#The explosion breaks blocks (through the standard explosion event, so claim mods can filter it).
+	#When false, it only hurts entities.
+	explosionBreaksBlocks = true
+	#The wellhead is blown off as an item that keeps its contents, like a dismantled wellhead.
+	#When false, it is destroyed with its contents (debris still drops).
+	explosionDropsWellhead = true
+
+#Interference between nearby producing wells.
+[interference]
+	enabled = true
+	#Horizontal radius (blocks) within which wells interfere.
+	# Default: 24
+	# Range: 1 ~ 256
+	radius = 24
+	#Penalty caused by one neighbour at distance 0, decreasing linearly to 0 at the radius.
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	strength = 0.25
+	#Maximum total interference.
+	# Default: 0.75
+	# Range: 0.0 ~ 1.0
+	max = 0.75
+	#Ticks between two searches for producing neighbours.
+	# Default: 100
+	# Range: 20 ~ 12000
+	checkInterval = 100
+
+#Slow, reversible heat exhaustion, stored per column in the world data (it survives the wellhead).
+#Per day, at a load L (steam made / tier max steam rate): exhaustion += gainPerDay x L - recoveryPerDay x max(0, 1 - L).
+#A well without a loaded wellhead recovers at the idle rate. The defaults stay mild: at most 15 % of the rate, reached after
+#about 15 days of continuous production (7.5 with 8 Speed upgrades), and a well under 83 % load never wears.
+[exhaustion]
+	enabled = true
+	#Exhaustion gained per Minecraft day (24000 ticks) at full load.
+	# Default: 0.01
+	# Range: 0.0 ~ 1.0
+	gainPerDay = 0.01
+	#Exhaustion recovered per Minecraft day while the well is idle.
+	# Default: 0.05
+	# Range: 0.0 ~ 1.0
+	recoveryPerDay = 0.05
+	#Maximum exhaustion: the largest share of the steam rate it can take.
+	# Default: 0.15
+	# Range: 0.0 ~ 1.0
+	max = 0.15
+	#Steam over the tier max steam rate (Speed upgrades) counts in the load: twice the steam, twice the
+	#wear. Off: the load is capped at 1.
+	countsUpgradedLoad = true
+
+#Mekanism Speed and Energy upgrades (Mekanism's upgrade tab, or sneak + right-click the wellhead with the upgrade).
+#With n of the 8 upgrades, a multiplier M applies as M^(n/8), like Mekanism machines.
+[upgrades]
+	#Accept Mekanism Speed and Energy upgrades.
+	enabled = true
+	#Drilling speed factor with 8 Speed upgrades. Drilling energy per tick grows with its square, as in Mekanism.
+	# Default: 10.0
+	# Range: 1.0 ~ 1000.0
+	speedMultiplier = 10.0
+	#Energy use divisor with 8 Energy upgrades.
+	# Default: 10.0
+	# Range: 1.0 ~ 1000.0
+	energyMultiplier = 10.0
+	#Energy upgrades also multiply the energy buffer, as in Mekanism.
+	energyRaisesCapacity = true
+	#Speed upgrades also raise the max steam rate (off: they only speed up drilling).
+	speedAffectsSteam = true
+	#Max steam rate factor with 8 Speed upgrades, when speedAffectsSteam is on. The water use follows.
+	# Default: 2.0
+	# Range: 1.0 ~ 100.0
+	steamMultiplier = 2.0
+	#When Speed upgrades raise the steam rate, the control system energy grows with the square of
+	#that factor, as Mekanism machines (x4 with 8 Speed upgrades and the default steamMultiplier); Energy upgrades still divide it.
+	speedRaisesControlEnergy = true
+
+#Logic adapter
+[adapter]
+	#Maximum distance (blocks) between a Configurator-linked adapter and its well.
+	# Default: 64
+	# Range: 1 ~ 4096
+	maxLinkDistance = 64

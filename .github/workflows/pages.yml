@@ -6,7 +6,7 @@ name: Pages
 on:
   push:
     branches: [main]
-    paths: [docs/**, mkdocs.yml, requirements.txt, .github/workflows/pages.yml]
+    paths: [docs/**, tools/generated/**, mkdocs.yml, requirements.txt, .github/workflows/pages.yml]
   workflow_dispatch:
 
 permissions:

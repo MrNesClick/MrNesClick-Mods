@@ -1,0 +1,8 @@
+#Wellhead interface
+[guide]
+	#Shows the guide tab: the steps from a new wellhead to steam production, and what to do next.
+	showGuide = true
+	#Opens the interface on the guide until the well first produced steam.
+	openGuideUntilFirstProduction = true
+	#Shows the next thing to do on the main page, until the well produces.
+	showNextAction = true

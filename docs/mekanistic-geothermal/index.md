@@ -25,6 +25,11 @@ own well and turns water into steam with the heat of the depths, for Mekanism's 
 
 ![The casing column going down to a lava lake](../assets/mekanistic-geothermal/media-02-column.png)
 
+## Where to go next
+
+- [Getting started](getting-started.md): from the recipe to steam in a turbine, step by step.
+- [Configuration](config.md): every option, with its default.
+
 ## Requirements
 
 | Minecraft | Loader | Mekanism | Optional |
