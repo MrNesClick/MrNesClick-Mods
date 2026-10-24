@@ -7,6 +7,7 @@ only holds the issues.
 |---|---|---|
 | **Flux Networks Extended** | Addon for Flux Networks: Herculean, Gargantuan and Ultimate Flux Plugs and Points, upgrade kits, Mekanism integration | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/flux-networks-extended) |
 | **MCNesClick** | Small, vanilla-friendly and fully configurable survival additions | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mcnesclick) |
+| **Mekanistic Geothermal** (alpha) | Addon for Mekanism: a self-drilling geothermal wellhead that turns water into steam for Mekanism turbines | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mekanistic-geothermal) |
 
 ## Report a bug or suggest something
 

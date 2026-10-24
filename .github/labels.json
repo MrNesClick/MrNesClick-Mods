@@ -1,6 +1,7 @@
 [
   {"name": "Flux Networks Extended", "color": "7a3fd0", "description": "Flux Networks Extended mod"},
   {"name": "MCNesClick", "color": "2e8b57", "description": "MCNesClick mod"},
+  {"name": "Mekanistic Geothermal", "color": "d9622b", "description": "Mekanistic Geothermal mod"},
   {"name": "bug", "color": "d73a4a", "description": "Something does not work"},
   {"name": "suggestion", "color": "0e8a16", "description": "Idea or improvement"},
   {"name": "duplicate", "color": "cfd3d7", "description": "Already reported"},

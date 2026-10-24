@@ -1,0 +1,70 @@
+name: "Bug: Mekanistic Geothermal"
+description: Something does not work in Mekanistic Geothermal
+title: "[MG] "
+labels: ["Mekanistic Geothermal", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! English or French, both are fine.
+        Mekanistic Geothermal is in alpha: bugs are expected, and every report helps.
+        If the problem is in a Mekanism machine and happens without Mekanistic Geothermal, report it to
+        [Mekanism](https://github.com/mekanism/Mekanism/issues) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Place a Basic Geothermal Wellhead at Y 70, put casings in it ...
+        2. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: minecraft
+    attributes:
+      label: Minecraft and loader
+      options:
+        - NeoForge 1.21.1
+    validations:
+      required: true
+  - type: input
+    id: mg-version
+    attributes:
+      label: Mekanistic Geothermal version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: mekanism-version
+    attributes:
+      label: Mekanism version
+      description: And Mekanism Generators if installed.
+      placeholder: "10.7.19"
+    validations:
+      required: true
+  - type: input
+    id: other-mods
+    attributes:
+      label: Other mods or modpack
+      description: Mods that touch Mekanism machines, pipes or energy, or the modpack name and version.
+      placeholder: "Jade 15.10.6 / or: All the Mods 10, 2.5"
+  - type: input
+    id: log
+    attributes:
+      label: Log or crash report
+      description: Upload `logs/latest.log` or the file in `crash-reports/` to https://mclo.gs and paste the link.
+      placeholder: "https://mclo.gs/..."
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and this one is new.
+          required: true

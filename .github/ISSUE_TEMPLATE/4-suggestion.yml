@@ -9,6 +9,7 @@ body:
       options:
         - Flux Networks Extended
         - MCNesClick
+        - Mekanistic Geothermal
     validations:
       required: true
   - type: textarea
