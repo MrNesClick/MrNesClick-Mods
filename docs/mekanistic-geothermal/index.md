@@ -28,7 +28,12 @@ own well and turns water into steam with the heat of the depths, for Mekanism's 
 ## Where to go next
 
 - [Getting started](getting-started.md): from the recipe to steam in a turbine, step by step.
+- [The wellhead](wellhead.md): drilling, heat and steam, interference, exhaustion, dismantling.
+- [Safety](safety.md): pressure, safety valve, automatic shutdown, emergency stop, eruptions.
+- [Upgrades](upgrades.md): what Speed and Energy upgrades do, and their price.
+- [Logic adapter](logic-adapter.md): redstone signals from a well, and its emergency stop input.
 - [Configuration](config.md): every option, with its default.
+- [Commands](commands.md): operator commands.
 
 ## Requirements
 

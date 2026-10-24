@@ -68,6 +68,6 @@ Connect a **Pressurized Tube** to a Mekanism **Industrial Turbine** (Mekanism Ge
 machine that takes Mekanism steam. The steam is auto-ejected through every face but the top.
 
 If the steam has nowhere to go, the pressure rises: the valve vents above 80 % and the control system stops production
-at 90 %.
+at 90 %. See [Safety](safety.md).
 
 ![The wellhead's main screen](../assets/mekanistic-geothermal/media-03-interface.png)

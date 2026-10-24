@@ -5,6 +5,9 @@ repo_url: https://github.com/MrNesClick/MrNesClick-Mods
 repo_name: Issues and suggestions
 edit_uri: ""
 
+validation:
+  anchors: warn
+
 theme:
   name: material
   language: en
@@ -56,7 +59,12 @@ nav:
   - Mekanistic Geothermal:
       - mekanistic-geothermal/index.md
       - Getting started: mekanistic-geothermal/getting-started.md
+      - The wellhead: mekanistic-geothermal/wellhead.md
+      - Safety: mekanistic-geothermal/safety.md
+      - Upgrades: mekanistic-geothermal/upgrades.md
+      - Logic adapter: mekanistic-geothermal/logic-adapter.md
       - Configuration: mekanistic-geothermal/config.md
+      - Commands: mekanistic-geothermal/commands.md
   - Flux Networks Extended:
       - flux-networks-extended/index.md
   - MCNesClick:
