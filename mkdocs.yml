@@ -2,7 +2,7 @@ site_name: MrNesClick's Minecraft mods
 site_description: Documentation of the Minecraft mods by MrNesClick
 site_url: https://mrnesclick.github.io/MrNesClick-Mods/
 repo_url: https://github.com/MrNesClick/MrNesClick-Mods
-repo_name: Issues and suggestions
+repo_name: Issues
 edit_uri: ""
 
 validation:
