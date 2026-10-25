@@ -6,11 +6,26 @@
 Use a freshly generated file, so that every value is the default. Each [section] becomes a heading with one table:
 option, default, allowed range or values, description. Section comments (the lines just before the header) become
 the section text.
+
+Two comment styles are read: NeoForge/Forge ("Range: 0 ~ 10", "Default: 5" lines) and MCNesClick's own
+("0 to 20, default: 8" as the last comment line of an option, "true or false" left out like a boolean elsewhere).
+A blank line drops the comments above it (MCNesClick's file header).
 """
 import re
 import sys
 
 META = re.compile(r"^(Default|Range|Allowed Values):\s*(.*)$")
+# MCNesClick: "<range>, default: <value>". The value may hold commas (lists), the range never holds ", default:".
+INLINE = re.compile(r"^(.*?), default: .*$")
+
+
+def meta(line):
+    """(kind, limits) for a metadata comment line, None for a description line."""
+    if m := META.match(line):
+        return m.group(1), m.group(2)
+    if m := INLINE.match(line):
+        return "Range", "" if m.group(1) == "true or false" else m.group(1)
+    return None
 
 
 def cell(text):
@@ -24,6 +39,7 @@ def parse(path):
     for raw in open(path, encoding="utf-8"):
         line = raw.strip()
         if not line:
+            pending = []
             continue
         if line.startswith("#"):
             pending.append(line[1:].strip())
@@ -32,12 +48,12 @@ def parse(path):
         if header:
             if current[0] or current[2]:
                 sections.append(current)
-            current = (header.group(1), [p for p in pending if not META.match(p)], [])
+            current = (header.group(1), [p for p in pending if not meta(p)], [])
             pending = []
             continue
         key, value = (part.strip() for part in line.split("=", 1))
-        description = [p for p in pending if not META.match(p)]
-        limits = [m.group(2) for p in pending if (m := META.match(p)) and m.group(1) != "Default"]
+        description = [p for p in pending if not meta(p)]
+        limits = [m[1] for p in pending if (m := meta(p)) and m[0] != "Default" and m[1]]
         current[2].append((key, value, ", ".join(limits), " ".join(description)))
         pending = []
     sections.append(current)

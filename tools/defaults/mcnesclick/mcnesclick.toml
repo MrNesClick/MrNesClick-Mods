@@ -1,0 +1,98 @@
+# MCNesclick configuration
+# Missing keys are added back with their default value.
+
+# Cooked apple
+[cooked_apple]
+# Furnace recipe (10 s). Applied on /reload
+# true or false, default: true
+furnace = true
+# Blast furnace recipe (5 s). Off by default: vanilla never cooks food in a blast furnace. Applied on /reload
+# true or false, default: false
+blast_furnace = false
+# Smoker recipe (5 s). Applied on /reload
+# true or false, default: true
+smoker = true
+# Campfire recipe (30 s). Applied on /reload
+# true or false, default: true
+campfire = true
+# Hunger points restored (2 = one drumstick). Needs a game/server restart.
+# On a server the server decides; players should use the same value so the tooltip matches
+# 0 to 20, default: 8
+hunger = 8
+# Saturation points restored. Needs a game/server restart (same remark as hunger)
+# 0.0 to 100.0, default: 12.0
+saturation = 12.0
+
+# Emerald apple: a golden apple surrounded by 8 emeralds. A snack for trading days
+[emerald_apple]
+# Crafting recipe. Applied on /reload
+# true or false, default: true
+enabled = true
+# Hunger points restored (2 = one drumstick). Needs a game/server restart
+# 0 to 20, default: 4
+hunger = 4
+# Saturation points restored. Needs a game/server restart
+# 0.0 to 100.0, default: 9.6
+saturation = 9.6
+# Effects given when eaten, as "effect_id seconds level" (level 1 = I). Any effect id works,
+# modded ones too; [] gives none. Applied on /reload
+# list of "effect_id seconds level", e.g. ["minecraft:speed 60 2"], default: ["minecraft:hero_of_the_village 300 1", "minecraft:luck 300 1"]
+effects = ["minecraft:hero_of_the_village 300 1", "minecraft:luck 300 1"]
+
+# Diamond apple: an emerald apple with 4 diamonds and 4 amethyst shards around it. A snack for mining trips
+[diamond_apple]
+# Crafting recipe. Applied on /reload
+# true or false, default: true
+enabled = true
+# Hunger points restored (2 = one drumstick). Needs a game/server restart
+# 0 to 20, default: 4
+hunger = 4
+# Saturation points restored. Needs a game/server restart
+# 0.0 to 100.0, default: 9.6
+saturation = 9.6
+# Effects given when eaten, as "effect_id seconds level" (level 1 = I). Any effect id works,
+# modded ones too; [] gives none. Applied on /reload
+# list of "effect_id seconds level", e.g. ["minecraft:speed 60 2"], default: ["minecraft:haste 300 2", "minecraft:night_vision 300 1"]
+effects = ["minecraft:haste 300 2", "minecraft:night_vision 300 1"]
+
+# Apples dropped by leaves (when broken without shears or Silk Touch, or when decaying)
+[apple_drops]
+# Use the chances below instead of the vanilla ones. Applied on /reload
+# true or false, default: true
+enabled = true
+# Chance in percent for oak leaves to drop an apple (vanilla: 0.5). Fortune still increases it
+# 0.0 to 100.0, default: 0.5
+oak_chance = 0.5
+# Chance in percent for dark oak leaves to drop an apple (vanilla: 0.5). Fortune still increases it
+# 0.0 to 100.0, default: 0.5
+dark_oak_chance = 0.5
+# Let all other leaves (birch, spruce, jungle, acacia, cherry, mangrove, azalea, modded leaves...) drop apples
+# true or false, default: false
+other_leaves = false
+# Chance in percent for other leaves to drop an apple, when other_leaves = true
+# 0.0 to 100.0, default: 0.25
+other_chance = 0.25
+
+# Lit campfires stop hostile mobs from spawning naturally around them (server side)
+[campfire_protection]
+# Turn the protection on or off. Applied on /reload
+# true or false, default: true
+enabled = true
+# Horizontal radius in blocks around the campfire
+# 1 to 64, default: 16
+radius = 16
+# Vertical distance in blocks above and below the campfire (keeps caves under a base from being protected)
+# 1 to 64, default: 8
+vertical_radius = 8
+# Only lit campfires protect
+# true or false, default: true
+require_lit = true
+# Soul campfires protect too
+# true or false, default: true
+soul_campfire = true
+# Also block monster spawners and trial spawners (off by default so mob farms keep working)
+# true or false, default: false
+affect_spawners = false
+# Mobs that can still spawn near a campfire, e.g. ["minecraft:creeper", "minecraft:slime"]
+# list of ids, e.g. ["minecraft:creeper"], default: []
+excluded_mobs = []

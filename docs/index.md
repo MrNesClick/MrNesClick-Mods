@@ -7,7 +7,7 @@ the mechanics and every config option.
 |---|---|---|---|---|
 | ![](assets/mekanistic-geothermal/logo.png){ width="48" } | [**Mekanistic Geothermal**](mekanistic-geothermal/index.md) (alpha) | Addon for Mekanism: a self-drilling geothermal wellhead that turns water into steam for Mekanism turbines | NeoForge 1.21.1 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mekanistic-geothermal) |
 | ![](assets/flux-networks-extended/logo.png){ width="48" } | [**Flux Networks Extended**](flux-networks-extended/index.md) (beta) | Addon for Flux Networks: Herculean, Gargantuan and Ultimate Flux Plugs and Points, upgrade kits, Mekanism integration | NeoForge 1.21.1, Forge 1.20.1 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/flux-networks-extended) |
-| ![](assets/mcnesclick/logo.png){ width="48" } | [**MCNesClick**](mcnesclick/index.md) | Small, vanilla-friendly and fully configurable survival additions | Fabric, NeoForge and Forge, 1.18 to 26.3 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mcnesclick) |
+| ![](assets/mcnesclick/logo.png){ width="48" } | [**MCNesclick**](mcnesclick/index.md) | Small, vanilla-friendly and fully configurable survival additions | Fabric, NeoForge and Forge, 1.18 to 26.3 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mcnesclick) |
 
 ## Bugs and suggestions
 

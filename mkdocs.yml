@@ -71,5 +71,8 @@ nav:
       - Upgrade kits: flux-networks-extended/upgrade-kits.md
       - Mekanism integration: flux-networks-extended/mekanism.md
       - Configuration: flux-networks-extended/config.md
-  - MCNesClick:
+  - MCNesclick:
       - mcnesclick/index.md
+      - Apples: mcnesclick/apples.md
+      - Campfire protection: mcnesclick/campfire-protection.md
+      - Configuration: mcnesclick/config.md
