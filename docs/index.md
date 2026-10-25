@@ -1,5 +1,7 @@
 # MrNesClick's Minecraft mods
 
+**English** · [Français](fr/)
+
 Documentation of the Minecraft mods by MrNesClick. Each mod has its own section: how to start, what each block does,
 the mechanics and every config option.
 
