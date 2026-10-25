@@ -1,0 +1,46 @@
+#Transfer limits of the tiered Flux Plugs and Points, in FE per tick.
+[tiers]
+
+	[tiers.herculean]
+		#Transfer limit of a newly placed device
+		# Default: 5000000
+		# Range: 0 ~ 1000000000000000
+		defaultLimit = 5000000
+		#Highest transfer limit of a device, "Disable Limit" included. At most 1000000000000000
+		#so that Flux Networks' network sums cannot overflow
+		# Default: 20000000
+		# Range: 1 ~ 1000000000000000
+		maxLimit = 20000000
+
+	[tiers.gargantuan]
+		#Transfer limit of a newly placed device
+		# Default: 50000000
+		# Range: 0 ~ 1000000000000000
+		defaultLimit = 50000000
+		#Highest transfer limit of a device, "Disable Limit" included. At most 1000000000000000
+		#so that Flux Networks' network sums cannot overflow
+		# Default: 200000000
+		# Range: 1 ~ 1000000000000000
+		maxLimit = 200000000
+
+	[tiers.ultimate]
+		#Transfer limit of a newly placed device
+		# Default: 1000000000
+		# Range: 0 ~ 1000000000000000
+		defaultLimit = 1000000000
+		#Highest transfer limit of a device, "Disable Limit" included. At most 1000000000000000
+		#so that Flux Networks' network sums cannot overflow
+		# Default: 1000000000000000
+		# Range: 1 ~ 1000000000000000
+		maxLimit = 1000000000000000
+
+#Flux Plugs and Points from Flux Networks itself
+[basic]
+	#Cap the basic Flux Plugs and Points at basicMaxLimit, "Disable Limit" included, so that higher
+	#transfer rates need the tiered devices. Off by default: existing networks keep working as before.
+	#The limit set in each device is kept, so turning this off again restores it.
+	capBasicDevices = false
+	#Highest transfer limit of a basic Flux Plug or Point when capBasicDevices is on
+	# Default: 2500000
+	# Range: 1 ~ 1000000000000000
+	basicMaxLimit = 2500000

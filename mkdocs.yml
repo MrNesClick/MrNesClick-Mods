@@ -67,5 +67,9 @@ nav:
       - Commands: mekanistic-geothermal/commands.md
   - Flux Networks Extended:
       - flux-networks-extended/index.md
+      - Tiered Plugs and Points: flux-networks-extended/devices.md
+      - Upgrade kits: flux-networks-extended/upgrade-kits.md
+      - Mekanism integration: flux-networks-extended/mekanism.md
+      - Configuration: flux-networks-extended/config.md
   - MCNesClick:
       - mcnesclick/index.md
