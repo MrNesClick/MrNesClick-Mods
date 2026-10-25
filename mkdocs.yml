@@ -38,6 +38,40 @@ theme:
     - search.highlight
     - content.tabs.link
 
+plugins:
+  - search
+  # French next to English: page.md is English, page.fr.md its French translation, served under /fr/.
+  # A page without translation falls back to English.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fr
+          name: Français
+          build: true
+          site_name: Les mods Minecraft de MrNesClick
+          site_description: Documentation des mods Minecraft de MrNesClick
+          nav_translations:
+            Home: Accueil
+            Getting started: Prise en main
+            The wellhead: La tête de puits
+            Safety: Sécurité
+            Upgrades: Améliorations
+            Logic adapter: Adaptateur logique
+            Configuration: Configuration
+            Commands: Commandes
+            Tiered Plugs and Points: Plugs et Points de tier
+            Upgrade kits: Kits d'amélioration
+            Mekanism integration: Intégration Mekanism
+            Apples: Pommes
+            Campfire protection: Feu de camp protecteur
+
 markdown_extensions:
   - admonition
   - attr_list

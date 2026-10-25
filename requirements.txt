@@ -2,3 +2,5 @@
 # The pages are plain Markdown, so a later move to Zensical (Material's successor) keeps them as they are.
 mkdocs==1.6.1
 mkdocs-material==9.7.6
+# French version of the site (page.fr.md next to page.md)
+mkdocs-static-i18n==1.3.1
