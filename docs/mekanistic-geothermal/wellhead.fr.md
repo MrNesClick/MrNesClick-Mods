@@ -82,5 +82,5 @@ maximum).
 ## Démontage
 
 Comme les machines de Mekanism, une tête de puits cassée garde dans l'objet son énergie, son eau, ses améliorations,
-ses tubages, ses réglages, sa configuration des faces et son mode redstone ; la vapeur est relâchée. Les tubages restent
+ses tubages, ses déblais, ses réglages, sa configuration des faces et son mode redstone ; la vapeur est relâchée. Les tubages restent
 dans le sol : une nouvelle tête de puits posée sur la colonne la reprend sans reforer.

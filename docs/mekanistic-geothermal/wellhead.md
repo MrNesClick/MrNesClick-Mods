@@ -75,6 +75,6 @@ damage of Mekanism's fission reactor (green, yellow, orange, dark red by quarter
 
 ## Dismantling
 
-Like Mekanism's machines, a broken wellhead keeps its energy, water, upgrades, casings, settings, side configuration and
-redstone mode in the item; the steam is released. The casings stay in the ground: a new wellhead placed on the column
+Like Mekanism's machines, a broken wellhead keeps its energy, water, upgrades, casings, debris, settings, side configuration
+and redstone mode in the item; the steam is released. The casings stay in the ground: a new wellhead placed on the column
 takes it over without drilling again.
